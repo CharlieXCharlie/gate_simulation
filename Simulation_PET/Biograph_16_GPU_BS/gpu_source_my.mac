@@ -1,0 +1,24 @@
+# the source for test
+# VOXELIZED SOURCES
+
+/gate/source/addSource                                              srcvoxel GPUEmisTomo
+/gate/source/srcvoxel/attachPhantomTo                               ncat
+/gate/source/srcvoxel/setGPUBufferSize                              1000000
+/gate/source/srcvoxel/setGPUDeviceID                                1
+
+/gate/source/srcvoxel/reader/insert                                 interfile
+/gate/source/srcvoxel/interfileReader/translator/insert             range
+/gate/source/srcvoxel/interfileReader/rangeTranslator/readTable     create_volume/gpu_volume/activities.dat
+/gate/source/srcvoxel/interfileReader/rangeTranslator/describe      1
+/gate/source/srcvoxel/interfileReader/verbose                       0
+/gate/source/srcvoxel/interfileReader/readFile                      create_volume/gpu_volume/gpu_phantom.hdr
+
+/gate/source/srcvoxel/setType                                       backtoback
+/gate/source/srcvoxel/gps/particle                                  gamma
+/gate/source/srcvoxel/gps/energytype                                Mono
+/gate/source/srcvoxel/gps/monoenergy                                0.511 MeV
+/gate/source/srcvoxel/setPosition                                   0 0 0 cm
+/gate/source/srcvoxel/gps/confine                                   NULL
+/gate/source/srcvoxel/gps/angtype                                   iso
+
+/gate/source/list

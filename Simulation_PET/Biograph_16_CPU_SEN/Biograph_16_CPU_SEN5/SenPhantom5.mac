@@ -1,0 +1,104 @@
+# This phantom is for the calculation of sensitivity
+# This is the fifth tube.
+
+/gate/world/daughters/name                    SenPhantom
+/gate/world/daughters/insert                  cylinder
+/gate/SenPhantom/geometry/setRmax             9.55 mm
+/gate/SenPhantom/geometry/setRmin             0. mm
+/gate/SenPhantom/geometry/setHeight           700. mm
+/gate/SenPhantom/placement/setTranslation 				0. 0. 0. mm
+/gate/SenPhantom/setMaterial                     Aluminium
+/gate/SenPhantom/vis/forceSolid
+/gate/SenPhantom/vis/setColor                    yellow
+
+/gate/SenPhantom/daughters/name                    SenPhantom1
+/gate/SenPhantom/daughters/insert                  cylinder
+/gate/SenPhantom1/geometry/setRmax             8.3 mm
+/gate/SenPhantom1/geometry/setRmin             0. mm
+/gate/SenPhantom1/geometry/setHeight           700. mm
+#/gate/SenPhantom1/placement/setTranslation 				0. 0. 0. mm
+/gate/SenPhantom1/setMaterial                     Air
+/gate/SenPhantom1/vis/forceSolid
+/gate/SenPhantom1/vis/setColor                    white
+
+/gate/SenPhantom1/daughters/name                    SenPhantom2
+/gate/SenPhantom1/daughters/insert                  cylinder
+/gate/SenPhantom2/geometry/setRmax             7.95 mm
+/gate/SenPhantom2/geometry/setRmin             0. mm
+/gate/SenPhantom2/geometry/setHeight           700. mm
+#/gate/SenPhantom2/placement/setTranslation 				0. 0. 0. mm
+/gate/SenPhantom2/setMaterial                     Aluminium
+/gate/SenPhantom2/vis/forceSolid
+/gate/SenPhantom2/vis/setColor                    yellow
+
+/gate/SenPhantom2/daughters/name                    SenPhantom3
+/gate/SenPhantom2/daughters/insert                  cylinder
+/gate/SenPhantom3/geometry/setRmax             6.7 mm
+/gate/SenPhantom/geometry/setRmin             0. mm
+/gate/SenPhantom3/geometry/setHeight           700. mm
+#/gate/SenPhantom3/placement/setTranslation 				0. 0. 0. mm
+/gate/SenPhantom3/setMaterial                     Air
+/gate/SenPhantom3/vis/forceSolid
+/gate/SenPhantom3/vis/setColor                    white
+
+/gate/SenPhantom3/daughters/name                    SenPhantom4
+/gate/SenPhantom3/daughters/insert                  cylinder
+/gate/SenPhantom4/geometry/setRmax             6.35 mm
+/gate/SenPhantom4/geometry/setRmin             0. mm
+/gate/SenPhantom4/geometry/setHeight           700. mm
+#/gate/SenPhantom4/placement/setTranslation 				0. 0. 0. mm
+/gate/SenPhantom4/setMaterial                     Aluminium
+/gate/SenPhantom4/vis/forceSolid
+/gate/SenPhantom4/vis/setColor                    yellow
+
+/gate/SenPhantom4/daughters/name                    SenPhantom5
+/gate/SenPhantom4/daughters/insert                  cylinder
+/gate/SenPhantom5/geometry/setRmax             5.1 mm
+/gate/SenPhantom5/geometry/setRmin             0. mm
+/gate/SenPhantom5/geometry/setHeight           700. mm
+#/gate/SenPhantom5/placement/setTranslation 				0. 0. 0. mm
+/gate/SenPhantom5/setMaterial                     Air
+/gate/SenPhantom5/vis/forceSolid
+/gate/SenPhantom5/vis/setColor                    white
+
+/gate/SenPhantom5/daughters/name                    SenPhantom6
+/gate/SenPhantom5/daughters/insert                  cylinder
+/gate/SenPhantom6/geometry/setRmax             4.75 mm
+/gate/SenPhantom6/geometry/setRmin             0. mm
+/gate/SenPhantom6/geometry/setHeight           700. mm
+#/gate/SenPhantom6/placement/setTranslation 				0. 0. 0. mm
+/gate/SenPhantom6/setMaterial                     Aluminium
+/gate/SenPhantom6/vis/forceSolid
+/gate/SenPhantom6/vis/setColor                    yellow
+
+/gate/SenPhantom6/daughters/name                    SenPhantom7
+/gate/SenPhantom6/daughters/insert                  cylinder
+/gate/SenPhantom7/geometry/setRmax             3.5 mm
+/gate/SenPhantom7/geometry/setRmin             0. mm
+/gate/SenPhantom7/geometry/setHeight           700. mm
+#/gate/SenPhantom7/placement/setTranslation 				0. 0. 0. mm
+/gate/SenPhantom7/setMaterial                     Air
+/gate/SenPhantom7/vis/forceSolid
+/gate/SenPhantom7/vis/setColor                    white
+
+/gate/SenPhantom7/daughters/name                    SenPhantom8
+/gate/SenPhantom7/daughters/insert                  cylinder
+/gate/SenPhantom8/geometry/setRmax             3.2 mm
+/gate/SenPhantom8/geometry/setRmin             0. mm
+/gate/SenPhantom8/geometry/setHeight           700. mm
+#/gate/SenPhantom8/placement/setTranslation 				0. 0. 0. mm
+/gate/SenPhantom8/setMaterial                     Polyethylene
+/gate/SenPhantom8/vis/forceSolid
+/gate/SenPhantom8/vis/setColor                    red
+
+/gate/SenPhantom8/daughters/name                    SenPhantom9
+/gate/SenPhantom8/daughters/insert                  cylinder
+/gate/SenPhantom9/geometry/setRmax             1.95 mm
+/gate/SenPhantom9/geometry/setRmin             0. mm
+/gate/SenPhantom9/geometry/setHeight           700. mm
+#/gate/SenPhantom9/placement/setTranslation 				0. 0. 0. mm
+/gate/SenPhantom9/setMaterial                     Water
+/gate/SenPhantom9/vis/forceSolid
+/gate/SenPhantom9/vis/setColor                    blue
+
+/gate/SenPhantom/attachPhantomSD

@@ -1,0 +1,17 @@
+# the source for test
+
+/gate/source/addSource                      s1 gps
+/gate/source/s1/setActivity                 1000000. becquerel
+/gate/source/s1/gps/particle                e+
+/gate/source/s1/setForcedUnstableFlag       true
+/gate/source/s1/setForcedHalfLife           6586 s
+/gate/source/s1/gps/energytype 				Fluor18
+/gate/source/s1/gps/type 				Volume
+/gate/source/s1/gps/shape 				Cylinder
+/gate/source/s1/gps/radius 				1.6 mm
+/gate/source/s1/gps/halfz 				350. mm
+/gate/source/s1/gps/angtype 				iso
+/gate/source/s1/visualize 					red
+/gate/source/s1/gps/centre 					0. 45. 0. mm
+
+/gate/source/list

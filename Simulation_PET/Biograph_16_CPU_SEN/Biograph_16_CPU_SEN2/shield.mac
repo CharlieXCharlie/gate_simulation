@@ -1,0 +1,45 @@
+#      T U N G S T E N    S H I E L D
+/gate/world/daughters/name   				carter
+/gate/world/daughters/insert 				cylinder
+/gate/carter/setMaterial 					Air
+/gate/carter/geometry/setRmax   			44.  cm
+/gate/carter/geometry/setRmin   			28.  cm
+/gate/carter/geometry/setHeight 			9. cm
+/gate/carter/placement/setTranslation 		0.0 0.0 12.5 cm
+/gate/carter/vis/forceWireframe
+
+/gate/carter/daughters/name 				carter1
+/gate/carter/daughters/insert 				cylinder
+/gate/carter1/setMaterial 					Tungsten
+/gate/carter1/geometry/setRmax 				30.0 cm
+/gate/carter1/geometry/setRmin 				29.0 cm
+/gate/carter1/geometry/setHeight 			3.0 cm
+/gate/carter1/vis/setColor grey
+/gate/carter1/placement/setTranslation 		0.0 0.0 -3 cm
+
+/gate/carter/daughters/name 				carter2
+/gate/carter/daughters/insert 				cylinder
+/gate/carter2/setMaterial 					Tungsten
+/gate/carter2/geometry/setRmax 				40.7 cm
+/gate/carter2/geometry/setRmin 				30.0 cm
+/gate/carter2/geometry/setHeight 			1.0 cm
+/gate/carter2/vis/setColor 					grey
+/gate/carter2/placement/setTranslation 		0.0 0.0 -2 cm
+
+/gate/carter/daughters/name 				carter3
+/gate/carter/daughters/insert 				cylinder
+/gate/carter3/setMaterial 					Tungsten
+/gate/carter3/geometry/setRmax 				40.7 cm
+/gate/carter3/geometry/setRmin 				39.7 cm
+/gate/carter3/geometry/setHeight 			3.0 cm
+/gate/carter3/vis/setColor 					grey
+/gate/carter3/placement/setTranslation 		0.0 0.0 0 cm
+	
+/gate/carter/daughters/name 				carter4
+/gate/carter/daughters/insert 				cylinder
+/gate/carter4/setMaterial 					Tungsten
+/gate/carter4/geometry/setRmax 				43.7 cm
+/gate/carter4/geometry/setRmin 				40.7 cm
+/gate/carter4/geometry/setHeight 			1.0 cm
+/gate/carter4/vis/setColor 					grey
+/gate/carter4/placement/setTranslation 		0.0 0.0 1 cm

@@ -1,0 +1,44 @@
+# This phantom is for the calculation of sensitivity
+# This is the second tube.
+
+/gate/world/daughters/name                    SenPhantom
+/gate/world/daughters/insert                  cylinder
+/gate/SenPhantom/geometry/setRmax             4.75 mm
+/gate/SenPhantom/geometry/setRmin             0. mm
+/gate/SenPhantom/geometry/setHeight           700. mm
+/gate/SenPhantom/placement/setTranslation 				0. 0. 0. mm
+/gate/SenPhantom/setMaterial                     Aluminium
+/gate/SenPhantom/vis/forceSolid
+/gate/SenPhantom/vis/setColor                    yellow
+
+/gate/SenPhantom/daughters/name                    SenPhantom1
+/gate/SenPhantom/daughters/insert                  cylinder
+/gate/SenPhantom1/geometry/setRmax             3.5 mm
+/gate/SenPhantom1/geometry/setRmin             0. mm
+/gate/SenPhantom1/geometry/setHeight           700. mm
+#/gate/SenPhantom1/placement/setTranslation 				0. 0. 0. mm
+/gate/SenPhantom1/setMaterial                     Air
+/gate/SenPhantom1/vis/forceSolid
+/gate/SenPhantom1/vis/setColor                    white
+
+/gate/SenPhantom1/daughters/name                    SenPhantom2
+/gate/SenPhantom1/daughters/insert                  cylinder
+/gate/SenPhantom2/geometry/setRmax             3.2 mm
+/gate/SenPhantom2/geometry/setRmin             0. mm
+/gate/SenPhantom2/geometry/setHeight           700. mm
+#/gate/SenPhantom2/placement/setTranslation 				0. 0. 0. mm
+/gate/SenPhantom2/setMaterial                     Polyethylene
+/gate/SenPhantom2/vis/forceSolid
+/gate/SenPhantom2/vis/setColor                    red
+
+/gate/SenPhantom2/daughters/name                    SenPhantom3
+/gate/SenPhantom2/daughters/insert                  cylinder
+/gate/SenPhantom3/geometry/setRmax             1.95 mm
+/gate/SenPhantom3/geometry/setRmin             0. mm
+/gate/SenPhantom3/geometry/setHeight           700. mm
+#/gate/SenPhantom3/placement/setTranslation 				0. 0. 0. mm
+/gate/SenPhantom3/setMaterial                     Water
+/gate/SenPhantom3/vis/forceSolid
+/gate/SenPhantom3/vis/setColor                    blue
+
+/gate/SenPhantom/attachPhantomSD

@@ -1,0 +1,24 @@
+# This phantom is for the calculation of sensitivity
+# This is the first and smallest tube.
+
+/gate/world/daughters/name                    SenPhantom
+/gate/world/daughters/insert                  cylinder
+/gate/SenPhantom/geometry/setRmax             3.2 mm
+/gate/SenPhantom/geometry/setRmin             0. mm
+/gate/SenPhantom/geometry/setHeight           700. mm
+/gate/SenPhantom/placement/setTranslation 				0. 0. 0. mm
+/gate/SenPhantom/setMaterial                     Polyethylene
+/gate/SenPhantom/vis/forceSolid
+/gate/SenPhantom/vis/setColor                    red
+
+/gate/SenPhantom/daughters/name                    SenPhantom1
+/gate/SenPhantom/daughters/insert                  cylinder
+/gate/SenPhantom1/geometry/setRmax             1.95 mm
+/gate/SenPhantom1/geometry/setRmin             0. mm
+/gate/SenPhantom1/geometry/setHeight           700. mm
+#/gate/SenPhantom1/placement/setTranslation 				0. 0. 0. mm
+/gate/SenPhantom1/setMaterial                     Water
+/gate/SenPhantom1/vis/forceSolid
+/gate/SenPhantom1/vis/setColor                    blue
+
+/gate/SenPhantom/attachPhantomSD

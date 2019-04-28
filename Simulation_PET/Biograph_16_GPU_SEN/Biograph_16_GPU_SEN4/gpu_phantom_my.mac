@@ -1,0 +1,12 @@
+# PHANTOM
+
+/gate/world/daughters/name                              ncat
+/gate/world/daughters/insert                            regularMatrix
+/gate/ncat/geometry/insertReader                        interfile
+/gate/ncat/interfileReader/insertTranslator             range
+/gate/ncat/interfileReader/rangeTranslator/readTable    create_volume/gpu_volume/ranges.dat
+/gate/ncat/interfileReader/rangeTranslator/describe     1
+/gate/ncat/interfileReader/readFile                     create_volume/gpu_volume/gpu_phantom.hdr
+/gate/ncat/placement/setTranslation                     0. 0. 0. mm
+/gate/ncat/placement/setRotationAxis                    1 0 0
+/gate/ncat/placement/setRotationAngle                   0 deg

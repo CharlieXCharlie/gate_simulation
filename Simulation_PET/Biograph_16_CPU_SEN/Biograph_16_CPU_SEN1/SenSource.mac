@@ -1,0 +1,16 @@
+# This source is for the calculation of sensitivity
+
+/gate/source/addSource F18LS gps
+/gate/source/F18LS/setActivity 10000. becquerel
+/gate/source/F18LS/gps/particle e+
+/gate/source/F18LS/setForcedUnstableFlag true
+/gate/source/F18LS/setForcedHalfLife 6586. s
+/gate/source/F18LS/gps/energytype Fluor18
+/gate/source/F18LS/gps/type Volume
+/gate/source/F18LS/gps/shape Cylinder
+/gate/source/F18LS/gps/radius 1.95 mm
+/gate/source/F18LS/gps/halfz 700. mm
+/gate/source/F18LS/gps/angtype iso
+/gate/source/F18LS//gps/centre 0. 0. 0. mm
+/gate/source/F18LS/visualize 2000 white 3
+/gate/source/list 

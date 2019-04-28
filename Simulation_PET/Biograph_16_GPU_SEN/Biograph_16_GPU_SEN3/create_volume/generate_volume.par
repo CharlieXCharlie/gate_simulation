@@ -1,0 +1,82 @@
+generate_image Parameters :=
+output filename:= gpu_phantom
+
+output file format type := Interfile
+interfile Output File Format Parameters := 
+  number format := unsigned integer
+  number_of_bytes_per_pixel := 2
+  scale_to_write_data := 1
+End Interfile Output File Format Parameters :=
+
+X output image size (in pixels):=254
+Y output image size (in pixels):=254
+Z output image size (in pixels):=700
+X voxel size (in mm):= 0.05
+Y voxel size (in mm):= 0.05
+Z voxel size (in mm):= 1
+
+  Z number of samples to take per voxel := 1
+  Y number of samples to take per voxel := 1
+  X number of samples to take per voxel := 1
+
+shape type:= ellipsoidal cylinder
+Ellipsoidal Cylinder Parameters:=
+   radius-x (in mm):=1.95
+   radius-y (in mm):=1.95
+   length-z (in mm):=700
+   origin (in mm):={350,0,0}
+   END:=
+value := 1
+
+next shape :=
+shape type:= ellipsoidal cylinder
+Ellipsoidal Cylinder Parameters:=
+   radius-x (in mm):=3.20
+   radius-y (in mm):=3.20
+   length-z (in mm):=700
+   origin (in mm):={350,0,0}
+   END:=
+value := 1
+
+next shape :=
+shape type:= ellipsoidal cylinder
+Ellipsoidal Cylinder Parameters:=
+   radius-x (in mm):=3.50
+   radius-y (in mm):=3.50
+   length-z (in mm):=700
+   origin (in mm):={350,0,0}
+   END:=
+value := 1
+
+next shape :=
+shape type:= ellipsoidal cylinder
+Ellipsoidal Cylinder Parameters:=
+   radius-x (in mm):=4.75
+   radius-y (in mm):=4.75
+   length-z (in mm):=700
+   origin (in mm):={350,0,0}
+   END:=
+value := 1
+
+next shape :=
+shape type:= ellipsoidal cylinder
+Ellipsoidal Cylinder Parameters:=
+   radius-x (in mm):=5.10
+   radius-y (in mm):=5.10
+   length-z (in mm):=700
+   origin (in mm):={350,0,0}
+   END:=
+value := 1
+
+next shape :=
+shape type:= ellipsoidal cylinder
+Ellipsoidal Cylinder Parameters:=
+   radius-x (in mm):=6.35
+   radius-y (in mm):=6.35
+   length-z (in mm):=700
+   origin (in mm):={350,0,0}
+   END:=
+value := 1
+
+
+END:=

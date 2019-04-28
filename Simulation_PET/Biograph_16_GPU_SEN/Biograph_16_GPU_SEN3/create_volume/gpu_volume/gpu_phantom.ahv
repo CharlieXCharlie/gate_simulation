@@ -1,0 +1,18 @@
+!INTERFILE  :=
+!name of data file := gpu_phantom.v
+!total number of images := 700
+!data offset in bytes := 0
+!imagedata byte order := LITTLEENDIAN
+!number format := unsigned integer
+!number of bytes per pixel := 2
+matrix axis label [1] := x
+!matrix size [1] := 254
+scaling factor (mm/pixel) [1] := 0.05
+matrix axis label [2] := y
+!matrix size [2] := 254
+scaling factor (mm/pixel) [2] := 0.05
+;Correct value is of keyword (commented out)
+;!slice thickness (pixels) := 20
+;Value for Analyze
+!slice thickness (pixels) := 1.00001
+!END OF INTERFILE :=

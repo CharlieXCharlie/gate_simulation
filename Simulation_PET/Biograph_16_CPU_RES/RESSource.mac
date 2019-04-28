@@ -1,0 +1,108 @@
+# the source for measure the Spatial REsolution of PET scanner
+
+# three central FOV point source
+/gate/source/addSource                      s1 gps
+/gate/source/s1/setActivity                 30000. becquerel
+/gate/source/s1/gps/particle                e+
+/gate/source/s1/setForcedUnstableFlag       true
+/gate/source/s1/setForcedHalfLife           6586 s
+/gate/source/s1/gps/energytype 				Fluor18
+/gate/source/s1/gps/type 				Volume
+/gate/source/s1/gps/shape 				Cylinder
+/gate/source/s1/gps/radius 				0.5 mm
+/gate/source/s1/gps/halfz 				0.5 mm
+/gate/source/s1/gps/angtype 				iso
+/gate/source/s1/visualize 					red
+/gate/source/s1/gps/centre 					0. 10. 0. mm
+
+/gate/source/addSource                      s2 gps
+/gate/source/s2/setActivity                 30000. becquerel
+/gate/source/s2/gps/particle                e+
+/gate/source/s2/setForcedUnstableFlag       true
+/gate/source/s2/setForcedHalfLife           6586 s
+/gate/source/s2/gps/energytype 				Fluor18
+/gate/source/s2/gps/type 				Volume
+/gate/source/s2/gps/shape 				Cylinder
+/gate/source/s2/gps/radius 				0.5 mm
+/gate/source/s2/gps/halfz 				0.5 mm
+/gate/source/s2/gps/angtype                 iso
+/gate/source/s2/visualize 					red
+/gate/source/s2/gps/centre 					0. 100. 0. mm
+
+/gate/source/addSource                      s3 gps
+/gate/source/s3/setActivity                 30000. becquerel
+/gate/source/s3/gps/particle                e+
+/gate/source/s3/setForcedUnstableFlag       true
+/gate/source/s3/setForcedHalfLife           6586 s
+/gate/source/s3/gps/energytype 				Fluor18
+/gate/source/s3/gps/type 				Volume
+/gate/source/s3/gps/shape 				Cylinder
+/gate/source/s3/gps/radius 				0.5 mm
+/gate/source/s3/gps/halfz 				0.5 mm
+/gate/source/s3/gps/angtype                 iso
+/gate/source/s3/visualize 					red
+/gate/source/s3/gps/centre 					100. 0. 0. mm
+
+# 1/4 axial FOV 
+/gate/source/addSource                      s4 gps
+/gate/source/s4/setActivity                 30000. becquerel
+/gate/source/s4/gps/particle                e+
+/gate/source/s4/setForcedUnstableFlag       true
+/gate/source/s4/setForcedHalfLife           6586 s
+/gate/source/s4/gps/energytype 				Fluor18
+/gate/source/s4/gps/type 				Volume
+/gate/source/s4/gps/shape 				Cylinder
+/gate/source/s4/gps/radius 				0.5 mm
+/gate/source/s4/gps/halfz 				0.5 mm
+/gate/source/s4/gps/angtype                 iso
+/gate/source/s4/visualize 					red
+/gate/source/s4/gps/centre 					0. 100. 40.5 mm
+
+/gate/source/addSource                      s5 gps
+/gate/source/s5/setActivity                 30000. becquerel
+/gate/source/s5/gps/particle                e+
+/gate/source/s5/setForcedUnstableFlag       true
+/gate/source/s5/setForcedHalfLife           6586 s
+/gate/source/s5/gps/energytype 				Fluor18
+/gate/source/s5/gps/type 				Volume
+/gate/source/s5/gps/shape 				Cylinder
+/gate/source/s5/gps/radius 				0.5 mm
+/gate/source/s5/gps/halfz 				0.5 mm
+/gate/source/s5/gps/angtype                 iso
+/gate/source/s5/visualize 					red
+/gate/source/s5/gps/centre 					0. 10. 40.5 mm
+
+/gate/source/addSource                      s6 gps
+/gate/source/s6/setActivity                 30000. becquerel
+/gate/source/s6/gps/particle                e+
+/gate/source/s6/setForcedUnstableFlag       true
+/gate/source/s6/setForcedHalfLife           6586 s
+/gate/source/s6/gps/energytype 				Fluor18
+/gate/source/s6/gps/type 				Volume
+/gate/source/s6/gps/shape 				Cylinder
+/gate/source/s6/gps/radius 				0.5 mm
+/gate/source/s6/gps/halfz 				0.5 mm
+/gate/source/s6/gps/angtype                 iso
+/gate/source/s6/visualize 					red
+/gate/source/s6/gps/centre 					100. 0. 40.5 mm
+
+
+
+/gate/source/list
+
+
+#/gate/source/addSource                      s6 gps
+#/gate/source/s6/gps/type 					Volume
+#/gate/source/s6/gps/shape 					Sphere
+#/gate/source/s6/gps/radius 					0.5 mm
+#/gate/source/s6/gps/angtype 				iso
+#/gate/source/s6/setType 					backtoback
+#/gate/source/s6/gps/particle 				gamma
+#/gate/source/s6/gps/energytype 				Mono
+#/gate/source/s6/gps/monoenergy 				0.511 MeV
+#/gate/source/s6/setActivity                 30000 becquerel
+#/gate/source/s6/setForcedUnstableFlag       true
+#/gate/source/s6/setForcedHalfLife           1223 s
+#/gate/source/s6/gps/angtype                 iso
+#/gate/source/s6/visualize 					red
+#/gate/source/s6/gps/centre 					100. 0. 40.5 mm

@@ -1,0 +1,128 @@
+# THis phantom is for Spatial Resolution Calculation
+
+/gate/world/daughters/name                    ResPhantom1
+/gate/world/daughters/insert                  cylinder
+/gate/ResPhantom1/geometry/setRmax             1.0 mm
+/gate/ResPhantom1/geometry/setRmin             0.5 mm
+/gate/ResPhantom1/geometry/setHeight           30.0 mm
+/gate/ResPhantom1/placement/setTranslation 				0. 10. 0. mm
+/gate/ResPhantom1/setMaterial                     Polyethylene
+/gate/ResPhantom1/vis/forceSolid
+/gate/ResPhantom1/vis/setColor                    red
+
+/gate/ResPhantom1/daughters/name                    ResPhantom11
+/gate/ResPhantom1/daughters/insert                  cylinder
+/gate/ResPhantom11/geometry/setRmax             0.5 mm
+/gate/ResPhantom11/geometry/setRmin             0. mm
+/gate/ResPhantom11/geometry/setHeight           1.0 mm
+#/gate/ResPhantom11/placement/setTranslation 				0. 0. 0. mm
+/gate/ResPhantom11/setMaterial                     Water
+/gate/ResPhantom11/vis/forceSolid
+/gate/ResPhantom11/vis/setColor                    blue
+
+/gate/world/daughters/name                    ResPhantom2
+/gate/world/daughters/insert                  cylinder
+/gate/ResPhantom2/geometry/setRmax             1.0 mm
+/gate/ResPhantom2/geometry/setRmin             0.5 mm
+/gate/ResPhantom2/geometry/setHeight           30.0 mm
+/gate/ResPhantom2/placement/setTranslation 				0. 100. 0. mm
+/gate/ResPhantom2/setMaterial                     Polyethylene
+/gate/ResPhantom2/vis/forceSolid
+/gate/ResPhantom2/vis/setColor                    red
+
+/gate/ResPhantom2/daughters/name                    ResPhantom22
+/gate/ResPhantom2/daughters/insert                  cylinder
+/gate/ResPhantom22/geometry/setRmax             0.5 mm
+/gate/ResPhantom22/geometry/setRmin             0. mm
+/gate/ResPhantom22/geometry/setHeight           1.0 mm
+#/gate/ResPhantom22/placement/setTranslation 				0. 0. 0. mm
+/gate/ResPhantom22/setMaterial                     Water
+/gate/ResPhantom22/vis/forceSolid
+/gate/ResPhantom22/vis/setColor                    blue
+
+/gate/world/daughters/name                    ResPhantom3
+/gate/world/daughters/insert                  cylinder
+/gate/ResPhantom3/geometry/setRmax             1.0 mm
+/gate/ResPhantom3/geometry/setRmin             0.5 mm
+/gate/ResPhantom3/geometry/setHeight           30.0 mm
+/gate/ResPhantom3/placement/setTranslation 				100. 0. 0. mm
+/gate/ResPhantom3/setMaterial                     Polyethylene
+/gate/ResPhantom3/vis/forceSolid
+/gate/ResPhantom3/vis/setColor                    red
+
+/gate/ResPhantom3/daughters/name                    ResPhantom33
+/gate/ResPhantom3/daughters/insert                  cylinder
+/gate/ResPhantom33/geometry/setRmax             0.5 mm
+/gate/ResPhantom33/geometry/setRmin             0. mm
+/gate/ResPhantom33/geometry/setHeight           1.0 mm
+#/gate/ResPhantom33/placement/setTranslation 				0. 0. 0. mm
+/gate/ResPhantom33/setMaterial                     Water
+/gate/ResPhantom33/vis/forceSolid
+/gate/ResPhantom33/vis/setColor                    blue
+
+/gate/world/daughters/name                    ResPhantom4
+/gate/world/daughters/insert                  cylinder
+/gate/ResPhantom4/geometry/setRmax             1.0 mm
+/gate/ResPhantom4/geometry/setRmin             0.5 mm
+/gate/ResPhantom4/geometry/setHeight           30.0 mm
+/gate/ResPhantom4/placement/setTranslation 				0. 100. 40.5 mm
+/gate/ResPhantom4/setMaterial                     Polyethylene
+/gate/ResPhantom4/vis/forceSolid
+/gate/ResPhantom4/vis/setColor                    red
+
+/gate/ResPhantom4/daughters/name                    ResPhantom44
+/gate/ResPhantom4/daughters/insert                  cylinder
+/gate/ResPhantom44/geometry/setRmax             0.5 mm
+/gate/ResPhantom44/geometry/setRmin             0. mm
+/gate/ResPhantom44/geometry/setHeight           1.0 mm
+#/gate/ResPhantom44/placement/setTranslation 				0. 0. 0. mm
+/gate/ResPhantom44/setMaterial                     Water
+/gate/ResPhantom44/vis/forceSolid
+/gate/ResPhantom44/vis/setColor                    blue
+
+/gate/world/daughters/name                    ResPhantom5
+/gate/world/daughters/insert                  cylinder
+/gate/ResPhantom5/geometry/setRmax             1.0 mm
+/gate/ResPhantom5/geometry/setRmin             0.5 mm
+/gate/ResPhantom5/geometry/setHeight           30.0 mm
+/gate/ResPhantom5/placement/setTranslation 				0. 10. 40.5 mm
+/gate/ResPhantom5/setMaterial                     Polyethylene
+/gate/ResPhantom5/vis/forceSolid
+/gate/ResPhantom5/vis/setColor                    red
+
+/gate/ResPhantom5/daughters/name                    ResPhantom55
+/gate/ResPhantom5/daughters/insert                  cylinder
+/gate/ResPhantom55/geometry/setRmax             0.5 mm
+/gate/ResPhantom55/geometry/setRmin             0. mm
+/gate/ResPhantom55/geometry/setHeight           1.0 mm
+#/gate/ResPhantom55/placement/setTranslation 				0. 0. 0. mm
+/gate/ResPhantom55/setMaterial                     Water
+/gate/ResPhantom55/vis/forceSolid
+/gate/ResPhantom55/vis/setColor                    blue
+
+/gate/world/daughters/name                    ResPhantom6
+/gate/world/daughters/insert                  cylinder
+/gate/ResPhantom6/geometry/setRmax             1.0 mm
+/gate/ResPhantom6/geometry/setRmin             0.5 mm
+/gate/ResPhantom6/geometry/setHeight           30.0 mm
+/gate/ResPhantom6/placement/setTranslation 				100. 0. 40.5 mm
+/gate/ResPhantom6/setMaterial                     Polyethylene
+/gate/ResPhantom6/vis/forceSolid
+/gate/ResPhantom6/vis/setColor                    red
+
+/gate/ResPhantom6/daughters/name                    ResPhantom66
+/gate/ResPhantom6/daughters/insert                  cylinder
+/gate/ResPhantom66/geometry/setRmax             0.5 mm
+/gate/ResPhantom66/geometry/setRmin             0. mm
+/gate/ResPhantom66/geometry/setHeight           1.0 mm
+#/gate/ResPhantom66/placement/setTranslation 				0. 0. 0. mm
+/gate/ResPhantom66/setMaterial                     Water
+/gate/ResPhantom66/vis/forceSolid
+/gate/ResPhantom66/vis/setColor                    blue
+
+/gate/ResPhantom1/attachPhantomSD
+/gate/ResPhantom2/attachPhantomSD
+/gate/ResPhantom3/attachPhantomSD
+/gate/ResPhantom4/attachPhantomSD
+/gate/ResPhantom5/attachPhantomSD
+/gate/ResPhantom6/attachPhantomSD

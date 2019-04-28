@@ -1,0 +1,44 @@
+# phantom discription
+
+/gate/world/daughters/name                    phantom
+/gate/world/daughters/insert                  cylinder
+/gate/phantom/geometry/setRmax             203. mm
+/gate/phantom/geometry/setRmin             0. mm
+/gate/phantom/geometry/setHeight           700.0 mm
+/gate/phantom/placement/setTranslation 				0. 0. 0. mm
+/gate/phantom/setMaterial                     Polyethylene
+/gate/phantom/vis/forceSolid
+/gate/phantom/vis/setColor                    blue
+
+/gate/phantom/daughters/name                    phantom_air
+/gate/phantom/daughters/insert                  cylinder
+/gate/phantom_air/geometry/setRmax             3.2 mm
+/gate/phantom_air/geometry/setRmin             0. mm
+/gate/phantom_air/geometry/setHeight           700.0 mm
+/gate/phantom_air/placement/setTranslation 				0. 45. 0. mm
+/gate/phantom_air/setMaterial                     Air
+/gate/phantom_air/vis/forceSolid
+/gate/phantom_air/vis/setColor                    blue
+
+/gate/phantom_air/daughters/name                    phantom_in_polye
+/gate/phantom_air/daughters/insert                  cylinder
+/gate/phantom_in_polye/geometry/setRmax             2.4 mm
+/gate/phantom_in_polye/geometry/setRmin             0. mm
+/gate/phantom_in_polye/geometry/setHeight           700.0 mm
+/gate/phantom_in_polye/placement/setTranslation 				0. 0. 0. mm
+/gate/phantom_in_polye/setMaterial                     Polyethylene
+/gate/phantom_in_polye/vis/forceSolid
+/gate/phantom_in_polye/vis/setColor                    blue
+
+/gate/phantom_in_polye/daughters/name                    phantom_water
+/gate/phantom_in_polye/daughters/insert                  cylinder
+/gate/phantom_water/geometry/setRmax             1.6 mm
+/gate/phantom_water/geometry/setRmin             0. mm
+/gate/phantom_water/geometry/setHeight           700.0 mm
+/gate/phantom_water/placement/setTranslation 				0. 0. 0. mm
+/gate/phantom_water/setMaterial                     Water
+/gate/phantom_water/vis/forceSolid
+/gate/phantom_water/vis/setColor                    blue
+
+
+/gate/phantom/attachPhantomSD

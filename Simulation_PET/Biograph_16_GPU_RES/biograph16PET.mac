@@ -1,0 +1,276 @@
+#=====================================================
+# VISUALISATION
+#=====================================================
+
+/vis/disable
+/vis/open                           OGLSX
+/vis/viewer/set/viewpointThetaPhi   60 60
+/vis/viewer/zoom                    6.0
+/vis/drawVolume
+/tracking/storeTrajectory           1
+/vis/scene/add/trajectories 
+/vis/scene/endOfEventAction         accumulate
+/control/execute                    Verbose.mac
+
+#=====================================================
+# GEOMETRY
+#=====================================================
+
+/gate/geometry/setMaterialDatabase    GateMaterials.db
+
+#   W O R L D
+/gate/world/geometry/setXLength       228. cm
+/gate/world/geometry/setYLength       200. cm
+/gate/world/geometry/setZLength       168. cm
+
+#	CYLINDRICAL
+/gate/world/daughters/name                    cylindricalPET
+/gate/world/daughters/insert                  cylinder
+/gate/cylindricalPET/geometry/setRmax         432 mm
+/gate/cylindricalPET/geometry/setRmin         412 mm
+/gate/cylindricalPET/geometry/setHeight       162 mm
+/gate/cylindricalPET/setMaterial              Air
+/gate/cylindricalPET/vis/forceWireframe
+/gate/cylindricalPET/vis/setColor             white
+
+#	RSECTOR
+/gate/cylindricalPET/daughters/name   	rsector
+/gate/cylindricalPET/daughters/insert 	box
+/gate/rsector/placement/setTranslation 	422.0 0.0 0.0 mm
+/gate/rsector/geometry/setXLength 		20.0 mm
+/gate/rsector/geometry/setYLength 		53.2 mm
+/gate/rsector/geometry/setZLength 		159.9 mm
+/gate/rsector/setMaterial 				Air
+/gate/rsector/vis/forceWireframe
+
+#	BLOCK
+/gate/rsector/daughters/name            block
+/gate/rsector/daughters/insert          box
+/gate/block/placement/setTranslation 	0.0 0.0 0.0 mm
+/gate/block/geometry/setXLength 		20.0 mm
+/gate/block/geometry/setYLength 		53.2 mm
+/gate/block/geometry/setZLength 		53.2 mm
+/gate/block/setMaterial 				Air
+/gate/block/vis/forceWireframe
+
+#	C R Y S T A L
+/gate/block/daughters/name 				crystal
+/gate/block/daughters/insert 			box
+/gate/crystal/geometry/setXLength 		20.0 mm
+/gate/crystal/geometry/setYLength 		4.0 mm
+/gate/crystal/geometry/setZLength 		4.0 mm
+/gate/crystal/setMaterial 				LSO
+/gate/crystal/vis/setColor 				white
+
+#	R E P E A T    C R Y S T A L
+/gate/crystal/repeaters/insert 				cubicArray
+/gate/crystal/cubicArray/setRepeatNumberX 	1
+/gate/crystal/cubicArray/setRepeatNumberY 	13
+/gate/crystal/cubicArray/setRepeatNumberZ 	13
+/gate/crystal/cubicArray/setRepeatVector 	0. 4.1 4.1 mm
+
+#	R E P E A T    BLOCK
+/gate/block/repeaters/insert 				cubicArray
+/gate/block/cubicArray/setRepeatNumberX 	1
+/gate/block/cubicArray/setRepeatNumberY 	1
+/gate/block/cubicArray/setRepeatNumberZ 	3
+/gate/block/cubicArray/setRepeatVector 		0. 0. 53.3 mm
+
+#	R E P E A T    RSECTOR
+/gate/rsector/repeaters/insert 		ring
+/gate/rsector/ring/setRepeatNumber 	48
+
+
+#   T U N G S T E N    S H I E L D 
+#/control/execute shild.mac
+
+#   A T T A C H    S Y S T E M 
+/gate/systems/cylindricalPET/rsector/attach 	rsector
+/gate/systems/cylindricalPET/module/attach 		block
+/gate/systems/cylindricalPET/crystal/attach 	crystal
+
+#	A T T A C H    C R Y S T A L  SD
+/gate/crystal/attachCrystalSD
+
+/gate/systems/cylindricalPET/describe
+
+#=====================================================
+#  P H A N T O M
+#=====================================================
+
+#/control/execute phantom.mac
+#/control/execute gpu_phantom.mac
+/control/execute gpu_phantom_my.mac
+
+#=====================================================
+# PHYSICS
+#=====================================================
+
+/gate/physics/addProcess PhotoElectric
+/gate/physics/processes/PhotoElectric/setModel 	StandardModel
+
+/gate/physics/addProcess Compton
+/gate/physics/processes/Compton/setModel 		StandardModel
+
+/gate/physics/addProcess RayleighScattering
+/gate/physics/processes/RayleighScattering/setModel PenelopeModel
+
+/gate/physics/addProcess ElectronIonisation
+/gate/physics/processes/ElectronIonisation/setModel StandardModel e-
+/gate/physics/processes/ElectronIonisation/setModel StandardModel e+
+
+/gate/physics/addProcess Bremsstrahlung
+/gate/physics/processes/Bremsstrahlung/setModel StandardModel e-
+/gate/physics/processes/Bremsstrahlung/setModel StandardModel e+
+
+/gate/physics/addProcess PositronAnnihilation
+
+/gate/physics/addProcess MultipleScattering e+
+/gate/physics/addProcess MultipleScattering e-
+
+/gate/physics/processList Enabled
+/gate/physics/processList Initialized
+
+#=====================================================
+# CUTS
+#=====================================================
+
+/gate/physics/Gamma/SetCutInRegion      crystal 1.0 cm
+/gate/physics/Electron/SetCutInRegion   crystal 1.0 cm
+/gate/physics/Positron/SetCutInRegion   crystal 1.0 cm
+
+
+#/gate/physics/Gamma/SetCutInRegion      phantom 0.1 mm
+#/gate/physics/Electron/SetCutInRegion   phantom 0.1 mm
+#/gate/physics/Positron/SetCutInRegion   phantom 0.1 mm
+#/gate/physics/SetMaxStepSizeInRegion    phantom 0.01 mm
+
+#=====================================================
+# INITIALISATION
+#=====================================================
+
+/gate/run/initialize
+
+#=====================================================
+# Show how the geometry moves with time
+#=====================================================
+
+#/control/execute                        MoveVisu.mac
+
+#=====================================================
+#   D I G I T I Z E R: DETECTOR ELECTRONIC RESPONSE
+#===================================================== 
+
+#	A D D E R
+/gate/digitizer/Singles/insert adder
+
+#       R E A D O U T 
+/gate/digitizer/Singles/insert 				readout
+/gate/digitizer/Singles/readout/setDepth 	1
+
+#      E N E R G Y   B L U R R I N G
+/gate/digitizer/Singles/insert 							blurring
+/gate/digitizer/Singles/blurring/setResolution 			0.14
+/gate/digitizer/Singles/blurring/setEnergyOfReference 	511. keV
+
+#       E N E R G Y   C U T
+/gate/digitizer/Singles/insert 							thresholder
+/gate/digitizer/Singles/thresholder/setThreshold 		425. keV
+/gate/digitizer/Singles/insert 							upholder
+/gate/digitizer/Singles/upholder/setUphold 				650. keV
+
+#       D E A D    T I M E 
+/gate/digitizer/Singles/name 					blockDT
+/gate/digitizer/Singles/insert 							deadtime
+/gate/digitizer/Singles/blockDT/setDeadTime 			300. ns
+/gate/digitizer/Singles/blockDT/setMode 				paralysable
+/gate/digitizer/Singles/blockDT/chooseDTVolume 		block
+
+/gate/digitizer/Singles/name 					rsectorDT
+/gate/digitizer/Singles/insert 							deadtime
+/gate/digitizer/Singles/rsectorDT/setDeadTime 			900. ns
+/gate/digitizer/Singles/rsectorDT/setMode 				paralysable
+/gate/digitizer/Singles/rsectorDT/chooseDTVolume 		rsector
+
+#/gate/diditizer/Singles/name 					blockDT
+#/gate/digitizer/Coincidences/insert 					deadtime
+#/gate/digitizer/Coincidences/deadtime/setDeadTime 		300. ns
+#/gate/digitizer/Coincidences/deadtime/setMode 			paralysable
+#/gate/digitizer/Coincidences/deadtime/chooseDTVolume 	block
+
+#=====================================================
+#	C O I N C I D E N C E    S O R T E R
+#===================================================== 
+
+#	C O I N C I    S O R T E R 
+/gate/digitizer/Coincidences/setWindow 4.5 ns
+/gate/digitizer/Coincidences/setOffset 0. ns
+/gate/digitizer/Coincidences/describe
+
+#/gate/digitizer/name 				delay
+#/gate/digitizer/insert 			coincidenceSorter
+#/gate/digitizer/delay/setWindow 	10. ns
+#/gate/digitizer/delay/setOffset 	500. ns
+#/gate/digitizer/delay/describe
+
+#/gate/digitizer/name 						finalCoinc
+#/gate/digitizer/insert 					coincidenceChain
+#/gate/digitizer/finalCoinc/addInputName 	delay
+#/gate/digitizer/finalCoinc/addInputName 	Coincidences
+#/gate/digitizer/finalCoinc/usePriority 	true
+#/gate/digitizer/finalCoinc/describe
+
+#=====================================================
+#  P A R T I C L E   S O U R C E
+#=====================================================
+
+# source for test
+#/control/execute source.mac
+#/control/execute RESSource.mac
+#/control/execute gpu_source.mac
+#/control/execute SFSource.mac
+#/control/execute SenSource.mac
+/control/execute gpu_source_my.mac
+
+
+#=====================================================
+#  D A T A   O U T P U T   
+#=====================================================
+
+/gate/output/root/enable
+/gate/output/root/setFileName             out/root_out
+/gate/output/root/setRootHitFlag          1
+/gate/output/root/setRootSinglesFlag      1
+/gate/output/root/setRootCoincidencesFlag 1
+#/gate/output/root/setRootdelayFlag       1
+
+#/gate/output/ascii/enable
+/gate/output/ascii/disable
+/gate/output/ascii/setFileName 					out/ascii_out
+/gate/output/ascii/setOutFileHitsFlag 			0
+/gate/output/ascii/setOutFileSinglesFlag 		0
+/gate/output/ascii/setOutFileCoincidencesFlag 	1
+/gate/output/ascii/setCoincidenceMask 			0 0 0 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 
+
+
+#====================================================
+#  R A N D O M   E N G I N E  A N D  S E E D
+#====================================================
+# JamesRandom Ranlux64 			MersenneTwister
+/gate/random/setEngineName 		JamesRandom
+#/gate/random/setEngineSeed 	default
+#/gate/random/setEngineSeed 	auto
+#/gate/random/setEngineSeed 	123456789
+/gate/random/setEngineSeed 		default
+#/gate/random/resetEngineFrom 	fileName
+/gate/random/verbose 			1
+
+#=====================================================
+#   M E A S U R E M E N T   S E T T I N G S   
+#=====================================================
+
+/gate/application/setTimeSlice   30000 s
+/gate/application/setTimeStart   0 s
+/gate/application/setTimeStop    30000 s
+
+/gate/application/startDAQ

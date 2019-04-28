@@ -1,0 +1,21 @@
+# the source for test
+
+/gate/source/addSource                                         posiC11 gps
+/gate/source/posiC11/gps/particle gamma
+
+/gate/source/posiC11/gps/type Volume
+/gate/source/posiC11/gps/shape Sphere
+/gate/source/posiC11/gps/radius 20 mm
+/gate/source/posiC11/gps/angtype iso
+#/gate/source/posiC11/gps/particle                              e+
+#/gate/source/posiC11/gps/energytype                            Carbon11
+/gate/source/posiC11/setType backtoback
+/gate/source/posiC11/gps/energytype Mono
+/gate/source/posiC11/gps/monoenergy 0.511 MeV
+/gate/source/posiC11/setActivity                               10000 becquerel
+/gate/source/posiC11/setForcedUnstableFlag                     true
+/gate/source/posiC11/setForcedHalfLife                         1223 s
+/gate/source/posiC11/gps/angtype                               iso
+/gate/source/posiC11/visualize red
+/gate/source/posiC11/gps/centre 0. 0. 0. mm
+

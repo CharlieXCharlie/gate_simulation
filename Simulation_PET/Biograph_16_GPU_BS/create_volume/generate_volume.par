@@ -1,0 +1,101 @@
+generate_image Parameters :=
+output filename:= gpu_phantom
+
+output file format type := Interfile
+interfile Output File Format Parameters := 
+  number format := unsigned integer
+  number_of_bytes_per_pixel := 2
+  scale_to_write_data := 1
+End Interfile Output File Format Parameters :=
+
+X output image size (in pixels):=460
+Y output image size (in pixels):=460
+Z output image size (in pixels):=140
+X voxel size (in mm):= 1
+Y voxel size (in mm):= 1
+Z voxel size (in mm):= 1
+
+  Z number of samples to take per voxel := 1
+  Y number of samples to take per voxel := 1
+  X number of samples to take per voxel := 1
+
+shape type:= ellipsoid
+Ellipsoid Parameters:=
+   radius-x (in mm):=60
+   radius-y (in mm):=60
+   radius-z (in mm):=60
+   origin (in mm):={70,0,160}
+   END:=
+value := 1
+
+next shape:=
+shape type:= ellipsoid
+Ellipsoid Parameters:=
+   radius-x (in mm):=50
+   radius-y (in mm):=50
+   radius-z (in mm):=50
+   origin (in mm):={70,-138,80}
+   END:=
+value := 1
+
+next shape:=
+shape type:= ellipsoid
+Ellipsoid Parameters:=
+   radius-x (in mm):=40
+   radius-y (in mm):=40
+   radius-z (in mm):=40
+   origin (in mm):={70,-138,-80}
+   END:=
+value := 1
+
+next shape:=
+shape type:= ellipsoid
+Ellipsoid Parameters:=
+   radius-x (in mm):=30
+   radius-y (in mm):=30
+   radius-z (in mm):=30
+   origin (in mm):={70,0,-160}
+   END:=
+value := 1
+
+next shape:=
+shape type:= ellipsoid
+Ellipsoid Parameters:=
+   radius-x (in mm):=20
+   radius-y (in mm):=20
+   radius-z (in mm):=20
+   origin (in mm):={70,138,-80}
+   END:=
+value := 1
+
+next shape:=
+shape type:= ellipsoid
+Ellipsoid Parameters:=
+   radius-x (in mm):=10
+   radius-y (in mm):=10
+   radius-z (in mm):=10
+   origin (in mm):={70,138,80}
+   END:=
+value := 1
+
+next shape:=
+shape type:= ellipsoid
+Ellipsoid Parameters:=
+   radius-x (in mm):=35
+   radius-y (in mm):=35
+   radius-z (in mm):=35
+   origin (in mm):={70,0,0}
+   END:=
+value := 1
+
+next shape:=
+shape type:= ellipsoidal cylinder
+Ellipsoidal Cylinder Parameters:=
+   radius-x (in mm):=230
+   radius-y (in mm):=230
+   length-z (in mm):=140
+   origin (in mm):={70,0,0}
+   END:=
+value := 1
+
+END:=
