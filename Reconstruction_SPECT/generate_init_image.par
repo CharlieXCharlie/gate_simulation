@@ -1,0 +1,24 @@
+generate_image Parameters :=
+output filename:=init
+X output image size (in pixels):=129
+Y output image size (in pixels):=129
+Z output image size (in pixels):=128
+X voxel size (in mm):= 2.5
+Y voxel size (in mm):= 2.5
+Z voxel size (in mm):= 2.5
+
+  Z number of samples to take per voxel := 1
+  Y number of samples to take per voxel := 1
+  X number of samples to take per voxel := 1
+
+;shape type:= ellipsoidal cylinder
+;Ellipsoidal Cylinder Parameters:=
+   ;radius-x (in mm):=1
+   ;radius-y (in mm):=1
+   ;length-z (in mm):=20
+   ;origin (in mm):={57.856,0,25}
+   ;END:=
+;value := 0
+
+
+END:=
