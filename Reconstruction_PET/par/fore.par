@@ -1,0 +1,13 @@
+Rebin projdata Parameters := 
+ rebinning type := FORE
+    FORE Parameters :=
+     input file := miche_header/michelogram.hs
+     output filename prefix := sinogram/FORE
+     Smallest angular frequency := 20
+     Smallest transaxial frequency := 20
+     Index for consistency := 20
+     Delta max for small omega := 10
+     ;maximum absolute segment number to process := 7
+     FORE debug level := 0
+   End FORE Parameters:=
+ END:

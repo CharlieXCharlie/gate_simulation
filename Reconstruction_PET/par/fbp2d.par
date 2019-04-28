@@ -1,0 +1,7 @@
+FBP2DParameters :=
+input file := miche_header/michelogram.hs
+xy output image size (in pixels) := 256
+zoom := 1
+
+output filename prefix := image/fbp2d
+END :=

@@ -1,0 +1,107 @@
+OSMAPOSLParameters :=
+; test file for OSMAPOSL with a quadratic prior (and ray tracing projection matrix)
+objective function type:= PoissonLogLikelihoodWithLinearModelForMeanAndProjData
+PoissonLogLikelihoodWithLinearModelForMeanAndProjData Parameters:=
+
+;input,sensitivity and prior parameters here
+input file := miche_header/michelogram.hs
+zero end planes of segment 0:= 0 
+; segment 0 is has direct and indirect planes
+; if disabled, defaults to maximum segment number in the file
+; use -1 to use the maximum available
+;maximum absolute segment number to process := 3
+
+; keywords that specify the projectors to be used
+projector pair type := Matrix
+  Projector Pair Using Matrix Parameters :=
+  ; use the PET Ray_tracing matrix.
+  ; this needs to be changed to SPECT UB when using SPECT data
+  Matrix type := Ray Tracing
+  Ray tracing matrix parameters :=
+   ;number of rays in tangential direction to trace for each bin := 10
+   ;do symmetry 90degrees min phi := 0
+  End Ray tracing matrix parameters :=
+  End Projector Pair Using Matrix Parameters :=
+
+; backgraound (e.g. randoms)
+additive sinogram := 0
+
+; sensitivity related keywords
+; time frame info used for dead-time calculation when using ECAT7
+;time frame definition filename :=
+;time frame number := 1
+; normalisation and attenuation info
+;Bin Normalisation type := None
+
+recompute sensitivity :=1
+; recommended
+use subset sensitivities := 1 
+; option filename to stroe /read the sensitivity image
+; (if use subset sensitivity is off)
+;sensitivity filename:=
+; optional filename to store/read the subsensitivities
+; use %d where you want to the subset_number (a la prinft)
+subset sensitivity filename := sens_%d.hv
+
+; keywords for specifying the prior information
+prior type := None
+
+; next keywords can be used to specify image size, but will be removed
+; they are ignored when using an initial image
+zoom := 1
+; use -1 for default size that cover the whole field of view
+XY output image size (in pixels) := 256 
+
+end PoissonLogLikelihoodWithLinearModelForMeanAndProjData Parameters:=
+
+; set output file format, if omitted a default value will be used
+Output file format := Interfile
+Interfile Output File Format Parameters :=
+;byte order := little-endian
+;number format := signed integer
+;number of bytes per pixel := 4
+End Interfile Output File Format Parameters :=
+
+; or an estimate_image_file.hv
+initial estimate := 1
+
+number of subsets:= 13
+start at subset:= 0
+number of subiterations:= 112
+;start at subiteration number:=1
+
+output filename prefix := image/osmaposl
+
+save estimates at subiteration intervals:= 14,28,42,56,70,84,98
+;uniformly randomise subset order:= 1
+
+; keywords that specify the filtering that occurs after every subiteration
+; waring : do not normally use together with a prior
+inter-iteration filter subiteration interval := 4 
+inter-iteration filter type := Separable Cartesian Metz 
+; keywords below will depend on the filter type (see text) 
+separable cartesian metz filter parameters := 
+x-dir filter fwhm (in mm) := 6 
+y-dir filter fwhm (in mm) := 6 
+z-dir filter fwhm (in mm) := 6 
+; use some sharpening here as example (not really recommended though) 
+x-dir filter metz power := 2 
+y-dir filter metz power := 2 
+z-dir filter metz power := 2 
+end separable cartesian metz filter parameters := 
+; keywords that specify the filtering that occurs at the end 
+; of the reconstruction 
+post-filter type := None 
+; keywords that specify the filtering that occurs before 
+; multiplying with the update image inter-update filter subiteration interval := 4 
+; would have to be filled in. 
+inter-update filter type := None 
+map model := additive 
+; keywords for preventing too drastic (multiplicative) updates 
+; below just set to their default values 
+maximum relative change := 3.40282e+38 
+minimum relative change := 0 
+; enabling this will write the multiplicative update images 
+; every sub-iteration 
+write update image := 0 
+END :=
